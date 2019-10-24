@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block links %}
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/veggies">Vegetables
+        <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/fruits">Fruits</a>
+      </li>
+    </ul>
+{% endblock %}
+
+{% block info %}
+    <ul>
+        {% for veg in lst %}
+            {% if veg == "beetroot" %}
+                <li>{{veg | upper()}}</li>
+            {% else %}
+                <li>{{veg}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}

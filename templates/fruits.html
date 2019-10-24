@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block styles %}
+    .special-li {
+        color: red;
+    }
+{% endblock %}
+
+{% block links %}
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/veggies">Vegetables</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/fruits">Fruits
+        <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+{% endblock %}
+
+{% block info %}
+    <ul>
+        {% for fr in lst %}
+            {% if fr == "strawberry" %}
+                <li class="special-li">{{fr}}</li>
+            {% else %}
+                <li>{{fr}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
